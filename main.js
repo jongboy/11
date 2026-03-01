@@ -5,10 +5,11 @@ const newQuoteButton = document.getElementById("new-quote");
 
 async function getQuote() {
     try {
-        const response = await fetch("https://api.quotable.io/random");
+        const response = await fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://zenquotes.io/api/random"));
         const data = await response.json();
-        quoteElement.textContent = `"${data.content}"`;
-        authorElement.textContent = `- ${data.author}`;
+        const quoteData = JSON.parse(data.contents)[0];
+        quoteElement.textContent = `"${quoteData.q}"`;
+        authorElement.textContent = `- ${quoteData.a}`;
     } catch (error) {
         quoteElement.textContent = "An error occurred while fetching the quote.";
         authorElement.textContent = "";
