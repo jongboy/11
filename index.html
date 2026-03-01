@@ -1,38 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
+    <title>성장하는 삶 - 자기계발 및 생산성 가이드</title>
+    <meta name="description" content="더 나은 내일을 위한 자기계발, 생산성 향상, 시간 관리 노하우와 유용한 정보를 공유합니다.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="main-container">
-        <div id="quote-container">
-            <p id="quote"></p>
-            <p id="author"></p>
-            <button id="new-quote">새 명언 가져오기</button>
+    <header>
+        <div class="header-container">
+            <h1>성장하는 삶</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">홈</a></li>
+                    <li><a href="#articles">아티클</a></li>
+                    <li><a href="#contact-container">제휴 문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content">
+            <section id="articles">
+                <article>
+                    <h2>시간 관리를 위한 포모도로 기법 완벽 가이드</h2>
+                    <p class="meta">작성일: 2023년 10월 27일 | 카테고리: 생산성</p>
+                    <p>현대 사회에서 시간은 가장 귀중한 자원입니다. 많은 사람들이 하루 24시간을 어떻게 효율적으로 사용할지 고민합니다. 그 중에서도 '포모도로 기법(Pomodoro Technique)'은 단순하면서도 강력한 시간 관리 방법론으로 전 세계적인 사랑을 받고 있습니다.</p>
+                    <h3>포모도로 기법이란?</h3>
+                    <p>1980년대 후반 프란체스코 시릴로(Francesco Cirillo)가 제안한 이 기법은 토마토 모양의 요리용 타이머를 사용한 것에서 유래했습니다. 핵심 원리는 간단합니다. 25분 동안 하나의 작업에 완전히 집중하고, 5분 동안 짧은 휴식을 취하는 것입니다. 이 30분의 사이클을 하나의 '포모도로'라고 부릅니다.</p>
+                    <h3>왜 효과적인가?</h3>
+                    <p>우리의 뇌는 장시간 고도의 집중력을 유지하기 어렵습니다. 25분이라는 짧은 시간 제한은 심리적인 부담을 줄여주어 일을 시작하게 만드는 원동력이 됩니다. 또한 잦은 휴식은 뇌의 피로를 막아주어 하루 종일 일정한 수준의 생산성을 유지할 수 있게 돕습니다.</p>
+                    <p>당장 오늘부터 타이머를 맞추고 첫 포모도로를 시작해보세요. 생각보다 훨씬 많은 일을 해낼 수 있다는 사실에 놀라게 될 것입니다.</p>
+                </article>
+
+                <article>
+                    <h2>성공하는 사람들의 아침 습관, 미라클 모닝</h2>
+                    <p class="meta">작성일: 2023년 10월 26일 | 카테고리: 자기계발</p>
+                    <p>아침 일찍 일어나 자신만의 시간을 갖는 '미라클 모닝'은 많은 성공한 사람들의 공통된 습관으로 알려져 있습니다. 단순히 일찍 일어나는 것을 넘어, 하루를 주도적으로 시작하는 강력한 의식입니다.</p>
+                    <h3>미라클 모닝의 핵심 루틴</h3>
+                    <p>할 엘로드의 저서 '미라클 모닝'에서는 SAVERS라는 6가지 루틴을 제안합니다. 침묵(Silence), 확언(Affirmations), 시각화(Visualization), 운동(Exercise), 독서(Reading), 기록(Scribing)입니다. 이 모든 것을 완벽하게 할 필요는 없으며, 자신의 라이프스타일에 맞게 변형하여 적용하는 것이 중요합니다.</p>
+                    <p>아침 10분의 명상과 가벼운 스트레칭만으로도 하루의 집중력과 활력이 크게 달라질 수 있습니다. 중요한 것은 타인에게 방해받지 않는 온전한 나만의 시간을 확보하는 것입니다. 작은 습관의 변화가 인생 전체를 바꿀 수 있습니다.</p>
+                </article>
+            </section>
         </div>
 
-        <div id="contact-container">
-            <h2>제휴 문의</h2>
-            <form action="https://formspree.io/f/xaqdzdbj" method="POST">
-                <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" required placeholder="성함을 입력해주세요">
-                </div>
-                <div class="form-group">
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" name="_replyto" required placeholder="이메일 주소를 입력해주세요">
-                </div>
-                <div class="form-group">
-                    <label for="message">문의 내용</label>
-                    <textarea id="message" name="message" required placeholder="문의하실 내용을 입력해주세요"></textarea>
-                </div>
-                <button type="submit" id="submit-btn">문의하기</button>
-            </form>
-        </div>
-    </div>
+        <aside class="sidebar">
+            <div id="quote-widget" class="widget">
+                <h3>오늘의 명언</h3>
+                <p id="quote">명언을 불러오는 중...</p>
+                <p id="author"></p>
+                <button id="new-quote">다른 명언 보기</button>
+            </div>
+
+            <div id="contact-container" class="widget">
+                <h3>제휴 문의</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">블로그 콘텐츠 제휴 및 광고 문의를 환영합니다.</p>
+                <form action="https://formspree.io/f/xaqdzdbj" method="POST">
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" required placeholder="성함">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="_replyto" required placeholder="이메일 주소">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="message" required placeholder="내용을 입력해주세요"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn">메일 보내기</button>
+                </form>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 성장하는 삶. All rights reserved. 본 블로그의 모든 콘텐츠는 무단 복제를 금지합니다.</p>
+    </footer>
     <script src="main.js"></script>
 </body>
-</html> 
+</html>

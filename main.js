@@ -1,8 +1,8 @@
+// 사이드바 명언 위젯 로직
 const quoteElement = document.getElementById("quote");
 const authorElement = document.getElementById("author");
 const newQuoteButton = document.getElementById("new-quote");
 
-// 한국어 명언 데이터 리스트
 const koreanQuotes = [
     { quote: "삶이 있는 한 희망은 있다.", author: "키케로" },
     { quote: "산다는 것 그것은 치열한 전투이다.", author: "로망로랑" },
@@ -14,24 +14,24 @@ const koreanQuotes = [
     { quote: "내일은 내일의 태양이 뜬다.", author: "마가렛 미첼" },
     { quote: "행복은 습관이다. 그것을 몸에 익혀라.", author: "허버드" },
     { quote: "자신감 있는 표정을 지으면 자신감이 생긴다.", author: "찰스 다윈" },
-    { quote: "평생 살 것처럼 꿈을 꾸고, 내일 죽을 것처럼 오늘을 살아라.", author: "제임스 딘" },
-    { quote: "고난의 시기에 동요하지 않는 것, 이것은 진정 칭찬받을 만한 뛰어난 인물의 증거다.", author: "베토벤" },
-    { quote: "당신이 할 수 있다고 믿든 할 수 없다고 믿든, 믿는 대로 될 것이다.", author: "헨리 포드" },
-    { quote: "작은 기회로부터 종종 위대한 업적이 시작된다.", author: "데모스테네스" }
+    { quote: "평생 살 것처럼 꿈을 꾸고, 내일 죽을 것처럼 오늘을 살아라.", author: "제임스 딘" }
 ];
 
 function getQuote() {
-    // 랜덤으로 명언 선택
+    if (!quoteElement || !authorElement) return;
+    
     const randomIndex = Math.floor(Math.random() * koreanQuotes.length);
     const selectedQuote = koreanQuotes[randomIndex];
     
-    // 화면에 표시
     quoteElement.textContent = `"${selectedQuote.quote}"`;
     authorElement.textContent = `- ${selectedQuote.author}`;
 }
 
-// 버튼 클릭 이벤트 리스너
-newQuoteButton.addEventListener("click", getQuote);
+if (newQuoteButton) {
+    newQuoteButton.addEventListener("click", getQuote);
+}
 
-// 페이지 로드 시 첫 명언 표시
-getQuote();
+// DOM이 완전히 로드된 후 명언 초기화
+document.addEventListener("DOMContentLoaded", () => {
+    getQuote();
+});
