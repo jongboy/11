@@ -7,11 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="quote-container">
-        <p id="quote"></p>
-        <p id="author"></p>
-        <button id="new-quote">New Quote</button>
+    <div id="main-container">
+        <div id="quote-container">
+            <p id="quote"></p>
+            <p id="author"></p>
+            <button id="new-quote">새 명언 가져오기</button>
+        </div>
+
+        <div id="contact-container">
+            <h2>제휴 문의</h2>
+            <form action="https://formspree.io/f/xaqdzdbj" method="POST">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" required placeholder="성함을 입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="이메일 주소를 입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" name="message" required placeholder="문의하실 내용을 입력해주세요"></textarea>
+                </div>
+                <button type="submit" id="submit-btn">문의하기</button>
+            </form>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
-</html>
+</html> 
